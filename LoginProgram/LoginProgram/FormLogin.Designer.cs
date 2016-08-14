@@ -1,6 +1,6 @@
 ﻿namespace LoginProgram
 {
-	partial class FormJoin
+	partial class FormLogin
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -32,8 +32,7 @@
 			this.tbxAccount = new System.Windows.Forms.TextBox();
 			this.lblPassword = new System.Windows.Forms.Label();
 			this.tbxPassword = new System.Windows.Forms.TextBox();
-			this.lblConfirmPassword = new System.Windows.Forms.Label();
-			this.tbxConfirmPassword = new System.Windows.Forms.TextBox();
+			this.btnLogin = new System.Windows.Forms.Button();
 			this.btnJoin = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
@@ -49,7 +48,7 @@
 			// 
 			// tbxAccount
 			// 
-			this.tbxAccount.Location = new System.Drawing.Point(161, 12);
+			this.tbxAccount.Location = new System.Drawing.Point(97, 12);
 			this.tbxAccount.Name = "tbxAccount";
 			this.tbxAccount.Size = new System.Drawing.Size(150, 21);
 			this.tbxAccount.TabIndex = 1;
@@ -66,55 +65,47 @@
 			// 
 			// tbxPassword
 			// 
-			this.tbxPassword.Location = new System.Drawing.Point(161, 39);
+			this.tbxPassword.Location = new System.Drawing.Point(97, 39);
 			this.tbxPassword.Name = "tbxPassword";
 			this.tbxPassword.Size = new System.Drawing.Size(150, 21);
 			this.tbxPassword.TabIndex = 3;
 			this.tbxPassword.UseSystemPasswordChar = true;
 			// 
-			// lblConfirmPassword
+			// btnLogin
 			// 
-			this.lblConfirmPassword.AutoSize = true;
-			this.lblConfirmPassword.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.lblConfirmPassword.Location = new System.Drawing.Point(12, 66);
-			this.lblConfirmPassword.Name = "lblConfirmPassword";
-			this.lblConfirmPassword.Size = new System.Drawing.Size(143, 21);
-			this.lblConfirmPassword.TabIndex = 4;
-			this.lblConfirmPassword.Text = "Confirm Password";
-			// 
-			// tbxConfirmPassword
-			// 
-			this.tbxConfirmPassword.Location = new System.Drawing.Point(161, 66);
-			this.tbxConfirmPassword.Name = "tbxConfirmPassword";
-			this.tbxConfirmPassword.Size = new System.Drawing.Size(150, 21);
-			this.tbxConfirmPassword.TabIndex = 5;
-			this.tbxConfirmPassword.UseSystemPasswordChar = true;
+			this.btnLogin.Location = new System.Drawing.Point(253, 12);
+			this.btnLogin.Name = "btnLogin";
+			this.btnLogin.Size = new System.Drawing.Size(75, 48);
+			this.btnLogin.TabIndex = 4;
+			this.btnLogin.Text = "Login";
+			this.btnLogin.UseVisualStyleBackColor = true;
+			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
 			// 
 			// btnJoin
 			// 
-			this.btnJoin.Location = new System.Drawing.Point(130, 103);
+			this.btnJoin.Location = new System.Drawing.Point(334, 12);
 			this.btnJoin.Name = "btnJoin";
-			this.btnJoin.Size = new System.Drawing.Size(69, 24);
-			this.btnJoin.TabIndex = 6;
+			this.btnJoin.Size = new System.Drawing.Size(75, 48);
+			this.btnJoin.TabIndex = 5;
 			this.btnJoin.Text = "Join";
 			this.btnJoin.UseVisualStyleBackColor = true;
 			this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
 			// 
-			// FormJoin
+			// FormLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(325, 139);
+			this.ClientSize = new System.Drawing.Size(421, 72);
 			this.Controls.Add(this.lblAccount);
 			this.Controls.Add(this.tbxAccount);
 			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.tbxPassword);
-			this.Controls.Add(this.lblConfirmPassword);
-			this.Controls.Add(this.tbxConfirmPassword);
+			this.Controls.Add(this.btnLogin);
 			this.Controls.Add(this.btnJoin);
-			this.Name = "FormJoin";
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Name = "FormLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Join";
+			this.Text = "Login";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -126,8 +117,7 @@
 		private System.Windows.Forms.TextBox tbxAccount;
 		private System.Windows.Forms.Label   lblPassword;
 		private System.Windows.Forms.TextBox tbxPassword;
-		private System.Windows.Forms.Label   lblConfirmPassword;
-		private System.Windows.Forms.TextBox tbxConfirmPassword;
+		private System.Windows.Forms.Button  btnLogin;
 		private System.Windows.Forms.Button  btnJoin;
 	}
 }
