@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LoginProgram
 {
@@ -68,7 +64,7 @@ namespace LoginProgram
             if (result != ENUM_ACCOUNT.OK)
                 return result;
 
-            AccountList. Add(new Account(account, password));
+            AccountList.Add(new Account(account, password));
 
             return ENUM_ACCOUNT.OK;
         }
