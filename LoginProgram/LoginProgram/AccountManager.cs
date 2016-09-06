@@ -54,7 +54,7 @@ namespace LoginProgram
 
 			// 비밀번호 오류 검사
 			if (ConfirmPasssword(password, confirmPassword) == false)
-				return E_ACCOUNT.PASSWORD_DOES_NOT_MATCH;
+				return E_ACCOUNT.PASSWORD_CONFIRM_FAILED;
 
 			accountInfoList.Add(account, new AccountInfo(account, password, false, false));
 

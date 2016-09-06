@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace LoginProgram
 {
@@ -19,19 +20,40 @@ namespace LoginProgram
 			lsvAccountInfoList.Items.Clear();
 
 			var accountInfoList = Program.accountManager.GetAccountInfoList();
-			foreach(var t in accountInfoList)
+			string searchFilter = tbxSearchAccount.Text;
+			if (searchFilter.Length > 0)
 			{
-				AccountInfo accountInfo = t.Value;
+				if (accountInfoList.ContainsKey(searchFilter))
+				{
+					AccountInfo accountInfo = accountInfoList[searchFilter];
 
-				ListViewItem lviAccountInfo = new ListViewItem(accountInfo.account);
+					ListViewItem lviAccountInfo = new ListViewItem(accountInfo.account);
 
-				lviAccountInfo.SubItems.Add(accountInfo.password            );
-				lviAccountInfo.SubItems.Add(accountInfo.activate ? "v" : "" );
-				lviAccountInfo.SubItems.Add(accountInfo.admin    ? "v" : "" );
+					lviAccountInfo.SubItems.Add(accountInfo.password);
+					lviAccountInfo.SubItems.Add(accountInfo.activate ? "v" : "");
+					lviAccountInfo.SubItems.Add(accountInfo.admin ? "v" : "");
 
-				lviAccountInfo.Tag = accountInfo;
+					lviAccountInfo.Tag = accountInfo;
 
-				lsvAccountInfoList.Items.Add(lviAccountInfo);
+					lsvAccountInfoList.Items.Add(lviAccountInfo);
+				}
+			}
+			else
+			{
+				foreach (var t in accountInfoList)
+				{
+					AccountInfo accountInfo = t.Value;
+
+					ListViewItem lviAccountInfo = new ListViewItem(accountInfo.account);
+
+					lviAccountInfo.SubItems.Add(accountInfo.password);
+					lviAccountInfo.SubItems.Add(accountInfo.activate ? "v" : "");
+					lviAccountInfo.SubItems.Add(accountInfo.admin ? "v" : "");
+
+					lviAccountInfo.Tag = accountInfo;
+
+					lsvAccountInfoList.Items.Add(lviAccountInfo);
+				}
 			}
 		}
 
@@ -96,6 +118,11 @@ namespace LoginProgram
 			tbxAccount .Text    = "";
 			chkActivate.Checked = false;
 			chkAdmin   .Checked = false;
+		}
+
+		private void tbxSearchFilter_KeyUp(object sender, KeyEventArgs e)
+		{
+			DisplayAccountInfoList();
 		}
 	}
 }
